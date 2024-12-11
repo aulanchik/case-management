@@ -33,6 +33,10 @@ interface ILoader {
   active: boolean;
 }
 
+interface IFilter {
+  state?: string;
+}
+
 export type {
   ImgTypes,
   ColorTypes,
@@ -42,4 +46,5 @@ export type {
   IHeader,
   ICheckbox,
   ILoader,
+  IFilter,
 };
