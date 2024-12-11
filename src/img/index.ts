@@ -1,5 +1,6 @@
 import { ImgTypes } from "@/interfaces";
 import iconBriefcase from "./briefcase.svg";
+import iconBriefcaseA from "./briefcaseA.svg";
 import iconChevronRight from "./chevronright.svg";
 import iconCircleThreeDots from "./circlethreedots.svg";
 import iconCircleThreeDotsA from "./circlethreedots-a.svg";
@@ -12,6 +13,7 @@ import iconSearch from "./search.svg";
 
 const img: ImgTypes = {
   iconBriefcase,
+  iconBriefcaseA,
   iconChevronRight,
   iconCircleThreeDots,
   iconCircleThreeDotsA,
