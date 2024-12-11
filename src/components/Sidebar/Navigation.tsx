@@ -4,7 +4,7 @@ import { ListItem, NavLink } from "./styles";
 
 export const Navigation = () => {
   const location = useLocation();
-  const path = location.pathname;
+  const path = location.pathname === "/" ? "/all" : location.pathname;
 
   return navData.map((item) => {
     const active = item.link === path;
