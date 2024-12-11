@@ -1,6 +1,6 @@
 import { create } from "zustand";
-import { CaseStore } from "@/types";
 import { fetchCases, updateCaseStatus } from "@/api/cases";
+import { CaseStore } from "@/types";
 
 const useCaseStore = create<CaseStore>((set) => ({
   cases: [],
@@ -8,10 +8,26 @@ const useCaseStore = create<CaseStore>((set) => ({
   selectedStatus: "",
   total: 0,
   loading: false,
-  fetchCases: async (status, search, sort, order, page) => {
+  currentPage: 1,
+  fetchCases: async (status, search, sort, order, page = 1, limit = 10) => {
     set({ loading: true });
-    const { data, total } = await fetchCases(status, search, sort, order, page);
-    set({ cases: data, total, loading: false });
+
+    try {
+      const response = await fetchCases(
+        status,
+        search,
+        sort,
+        order,
+        page,
+        limit,
+      );
+      const { data, total } = response;
+
+      set({ cases: data, total, loading: false });
+    } catch (error) {
+      console.error("Failed to fetch cases:", error);
+      set({ cases: [], total: 0, loading: false });
+    }
   },
   updateStatus: async (ids, status) => {
     await updateCaseStatus(ids, status);
@@ -24,6 +40,7 @@ const useCaseStore = create<CaseStore>((set) => ({
     }));
   },
   setStatus: (status) => set({ selectedStatus: status }),
+  setCurrentPage: (page) => set({ currentPage: page }),
 }));
 
 export default useCaseStore;

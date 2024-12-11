@@ -15,16 +15,19 @@ type CaseStore = {
   selectedStatus: string;
   total: number;
   loading: boolean;
+  currentPage: any;
   fetchCases: (
     status?: string,
     search?: string,
     sort?: string,
     order?: string,
     page?: number,
+    limit?: number,
   ) => Promise<void>;
   updateStatus: (ids: string[], status: string) => Promise<void>;
   toggleCaseSelection: (caseId: string) => void;
   setStatus: (status: string) => void;
+  setCurrentPage: (page: number) => void;
 };
 
 export type { Case, CaseStore };
