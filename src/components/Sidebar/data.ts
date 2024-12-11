@@ -18,15 +18,15 @@ const navData = [
   {
     id: Math.random(),
     name: "Accepted cases",
-    icon: img.iconTick,
-    activeIcon: img.iconTickA,
+    icon: img.iconCircleTick,
+    activeIcon: img.iconCircleTickA,
     link: "/accepted",
   },
   {
     id: Math.random(),
     name: "Rejected cases",
-    icon: img.iconCross,
-    activeIcon: img.iconCrossA,
+    icon: img.iconCircleCross,
+    activeIcon: img.iconCircleCrossA,
     link: "/rejected",
   },
 ];
