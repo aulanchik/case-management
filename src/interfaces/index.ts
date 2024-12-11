@@ -18,4 +18,8 @@ interface IWrapper {
   children: React.ReactNode;
 }
 
-export type { ImgTypes, ColorTypes, SizeTypes, DeviceTypes, IWrapper };
+interface IHeader {
+  title: string;
+}
+
+export type { ImgTypes, ColorTypes, SizeTypes, DeviceTypes, IWrapper, IHeader };
