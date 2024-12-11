@@ -29,6 +29,10 @@ interface ICheckbox {
   onChange?: () => void;
 }
 
+interface ILoader {
+  active: boolean;
+}
+
 export type {
   ImgTypes,
   ColorTypes,
@@ -37,4 +41,5 @@ export type {
   IWrapper,
   IHeader,
   ICheckbox,
+  ILoader,
 };
