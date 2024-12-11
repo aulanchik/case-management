@@ -1,10 +1,11 @@
 import { FC } from "react";
-import { Wrapper, Header } from "@/components";
+import { Wrapper, Header, Filter } from "@/components";
 
 const PendingCases: FC = () => {
   return (
     <Wrapper>
       <Header title="Pending cases" />
+      <Filter />
     </Wrapper>
   );
 };
