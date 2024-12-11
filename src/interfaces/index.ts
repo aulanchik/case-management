@@ -22,4 +22,19 @@ interface IHeader {
   title: string;
 }
 
-export type { ImgTypes, ColorTypes, SizeTypes, DeviceTypes, IWrapper, IHeader };
+interface ICheckbox {
+  id: string;
+  name: string;
+  checked?: boolean;
+  onChange?: () => void;
+}
+
+export type {
+  ImgTypes,
+  ColorTypes,
+  SizeTypes,
+  DeviceTypes,
+  IWrapper,
+  IHeader,
+  ICheckbox,
+};
