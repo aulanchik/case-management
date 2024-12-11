@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Wrapper, Header, Filter, Table } from "@/components";
+import { Wrapper, Header, Filter, Table, Footer } from "@/components";
 
 const AllCases: FC = () => {
   return (
@@ -7,6 +7,7 @@ const AllCases: FC = () => {
       <Header title="All cases" />
       <Filter />
       <Table />
+      <Footer />
     </Wrapper>
   );
 };
