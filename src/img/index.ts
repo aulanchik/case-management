@@ -21,7 +21,6 @@ const img: ImgTypes = {
   iconCircleTickA,
   iconCircleCross,
   iconCircleCrossA,
-
   iconDots,
   iconSearch,
 };
