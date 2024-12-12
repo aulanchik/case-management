@@ -59,23 +59,30 @@ const Input = styled.input`
   font-weight: 400;
   width: 325px;
   color: ${colors.grey2};
+  padding-left: 35px;
+  padding-right: 80px;
+`;
+
+const Icon = styled.img`
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
 `;
 
 const SearchButton = styled.button`
   position: absolute;
-  font-size: 0.9rem;
-  font-weight: 500;
-  line-height: 1.25rem;
-  color: ${colors.white};
-  background-color: ${colors.blue4};
-  border-radius: 0.375rem;
-  letter-spacing: 2%;
-  padding: 0.4rem 0.75rem;
-  border: none;
   right: 0;
-
+  background-color: ${colors.blue2};
+  color: ${colors.white};
+  padding: 0 1rem;
+  height: 34px;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 200ms ease;
   &:hover {
-    cursor: pointer;
+    opacity: 0.8;
   }
 
   &:active {
@@ -83,4 +90,4 @@ const SearchButton = styled.button`
   }
 `;
 
-export { Section, Views, Select, Flex, Input, SearchButton };
+export { Section, Views, Select, Flex, Input, Icon, SearchButton };

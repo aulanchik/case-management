@@ -1,6 +1,7 @@
 import { FC, useState } from "react";
-import { Flex, Input, SearchButton } from "./styles";
+import { Flex, Input, Icon, SearchButton } from "./styles";
 import useCaseStore from "@/store/useCaseStore";
+import img from "@/img";
 
 const Search: FC = () => {
   const { loading, fetchCases } = useCaseStore();
@@ -20,6 +21,7 @@ const Search: FC = () => {
 
   return (
     <Flex>
+      <Icon src={img.iconSearch} alt="Search icon" />
       <Input
         type="text"
         placeholder="Search..."
