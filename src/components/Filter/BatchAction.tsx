@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import { IFilter } from "@/interfaces";
 import useCaseStore from "@/store/useCaseStore";
 import { Views, Select } from "./styles";
@@ -6,6 +6,8 @@ import { Views, Select } from "./styles";
 const BatchAction: FC<IFilter> = ({ state }) => {
   const { selectedCases, selectedStatus, setStatus, updateStatus, fetchCases } =
     useCaseStore();
+
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleStatusChange = async (status: string) => {
     if (!selectedCases.length) {
@@ -17,15 +19,19 @@ const BatchAction: FC<IFilter> = ({ state }) => {
     fetchCases(state);
   };
 
+  const toggleDropdown = () => setIsOpen((prev) => !prev);
+
   return (
     <Views>
       <Select
         value={selectedStatus}
         onChange={(e) => handleStatusChange(e.target.value)}
+        onFocus={toggleDropdown}
+        onBlur={toggleDropdown}
       >
         {selectedStatus === "" && (
           <option value="" disabled hidden>
-            Batch action ▼
+            Batch action {isOpen ? "▲" : "▼"}
           </option>
         )}
         <option value="Accepted">Accepted</option>
