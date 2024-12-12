@@ -12,7 +12,12 @@ const TableRows: FC = () => {
         <TableRow key={index} item={caseItem} />
       ));
     }
-    return cases.map((item) => <TableRow key={item.caseName} item={item} />);
+    return cases.map((item, index) => (
+      <TableRow
+        key={`${item.caseName}-${item.dateCreated}-${index}`}
+        item={item}
+      />
+    ));
   };
 
   return renderRows();
