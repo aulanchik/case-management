@@ -1,7 +1,7 @@
 import { FC, useState, useEffect } from "react";
 import { IFilter } from "@/interfaces";
 import useCaseStore from "@/store/useCaseStore";
-import { Section, Flex } from "./styles";
+import { Section, Flex, Text, Input, PageNext } from "./styles";
 
 const Footer: FC<IFilter> = ({ state }) => {
   const { total, loading, fetchCases } = useCaseStore();
@@ -49,9 +49,9 @@ const Footer: FC<IFilter> = ({ state }) => {
         <p>Loading...</p>
       ) : (
         <Flex>
-          <p>{`${startItem}-${endItem} of ${total} cases`}</p>
+          <Text>{`${startItem}-${endItem} of ${total} cases`}</Text>
           <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-            <input
+            <Input
               type="number"
               min="1"
               max={totalPages}
@@ -59,13 +59,13 @@ const Footer: FC<IFilter> = ({ state }) => {
               onChange={handleInputChange}
               style={{ width: "50px", textAlign: "center" }}
             />
-            <span>{`/ ${totalPages}`}</span>
-            <button
+            <Text>{`/ ${totalPages}`}</Text>
+            <PageNext
               onClick={handleNextPage}
               disabled={currentPage >= totalPages}
             >
-              {">"}
-            </button>
+              &gt;
+            </PageNext>
           </div>
         </Flex>
       )}
