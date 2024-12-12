@@ -7,7 +7,9 @@ const THeader: FC = () => (
   <Header>
     <Row>
       <HeaderCell>
-        <Checkbox id="selectAll" name="selectAll" />
+        <div style={{ textAlign: "center" }}>
+          <Checkbox id="selectAll" name="selectAll" />
+        </div>
       </HeaderCell>
       {thData.map((headerItem) => (
         <HeaderCell key={headerItem}>{headerItem}</HeaderCell>

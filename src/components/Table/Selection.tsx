@@ -13,12 +13,14 @@ const Selection: FC<{ item: Case }> = ({ item }) => {
 
   return (
     <Cell>
-      <Checkbox
-        id={item.caseName}
-        name={item.caseName}
-        checked={selectedCases.includes(item.caseName)}
-        onChange={() => toggleCaseSelection(item.caseName)}
-      />
+      <div style={{ textAlign: "center" }}>
+        <Checkbox
+          id={item.caseName}
+          name={item.caseName}
+          checked={selectedCases.includes(item.caseName)}
+          onChange={() => toggleCaseSelection(item.caseName)}
+        />
+      </div>
     </Cell>
   );
 };

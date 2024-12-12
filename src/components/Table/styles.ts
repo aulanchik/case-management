@@ -5,6 +5,7 @@ const Table = styled.table`
   width: 100%;
   border-collapse: collapse;
   box-shadow: 0 1px 3px 0 #00000026;
+  border-radius: 8px;
 
   tr,
   th,
@@ -16,8 +17,8 @@ const Header = styled.thead``;
 
 const HeaderCell = styled.th`
   weight: 600;
-  font-size: 12px;
-  line-height: 14.52px;
+  font-size: 0.75rem;
+  line-height: 0.91rem;
   text-transform: uppercase;
   letter-spacing: 5%;
   text-align: left;
@@ -33,9 +34,9 @@ const Row = styled.tr`
 
 const Cell = styled.td`
   color: #2e3b52;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
-  line-height: 16.94px;
+  line-height: 1.06rem;
 `;
 
 const Actions = styled.div`
