@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import { Flex, Input } from "./styles";
+import { Flex, Input, SearchButton } from "./styles";
 import useCaseStore from "@/store/useCaseStore";
 
 const Search: FC = () => {
@@ -26,9 +26,9 @@ const Search: FC = () => {
         value={searchQuery}
         onChange={(e) => handleOnChange(e)}
       />
-      <button onClick={handleSearch} disabled={loading}>
+      <SearchButton onClick={handleSearch} disabled={loading}>
         Search
-      </button>
+      </SearchButton>
     </Flex>
   );
 };
