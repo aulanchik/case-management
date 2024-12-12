@@ -1,10 +1,10 @@
 import { FC, useState, useEffect } from "react";
 import { IFilter } from "@/interfaces";
 import useCaseStore from "@/store/useCaseStore";
-import { Section, Flex, Text, Input, PageNext } from "./styles";
+import { Section, Flex, Text, Input, InputContainer, PageNext } from "./styles";
 
 const Footer: FC<IFilter> = ({ state }) => {
-  const { total, loading, fetchCases } = useCaseStore();
+  const { total, fetchCases } = useCaseStore();
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
 
@@ -45,30 +45,25 @@ const Footer: FC<IFilter> = ({ state }) => {
 
   return (
     <Section>
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
-        <Flex>
-          <Text>{`${startItem}-${endItem} of ${total} cases`}</Text>
-          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-            <Input
-              type="number"
-              min="1"
-              max={totalPages}
-              value={currentPage}
-              onChange={handleInputChange}
-              style={{ width: "50px", textAlign: "center" }}
-            />
-            <Text>{`/ ${totalPages}`}</Text>
-            <PageNext
-              onClick={handleNextPage}
-              disabled={currentPage >= totalPages}
-            >
-              &gt;
-            </PageNext>
-          </div>
-        </Flex>
-      )}
+      <Flex>
+        <Text>{`${startItem}-${endItem} of ${total} cases`}</Text>
+        <InputContainer>
+          <Input
+            type="number"
+            min="1"
+            max={totalPages}
+            value={currentPage}
+            onChange={handleInputChange}
+          />
+          <Text>{`/ ${totalPages}`}</Text>
+          <PageNext
+            onClick={handleNextPage}
+            disabled={currentPage >= totalPages}
+          >
+            &gt;
+          </PageNext>
+        </InputContainer>
+      </Flex>
     </Section>
   );
 };

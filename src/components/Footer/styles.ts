@@ -25,13 +25,22 @@ const Input = styled.input`
   font-size: 0.9rem;
   line-height: 1.125rem;
   border-radius: 0.375rem;
-  border: 1px solid #464f6029;
-  box-shadow: 0px 1px 1px #464f6029;
+  border: 1px solid ${colors.grey3};
+  box-shadow: 0px 1px 1px ${colors.grey3};
   appearance: none;
+
+  width: 50px;
+  text-align: center;
 
   &[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
   }
+`;
+
+const InputContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
 `;
 
 const PageNext = styled.button`
@@ -40,9 +49,9 @@ const PageNext = styled.button`
   line-height: 1.125rem;
   padding: 0.688rem 1.063rem;
   border-radius: 0.375rem;
-  border: 1px solid #464f6029;
+  border: 1px solid ${colors.grey3};
   background-color: ${colors.white};
-  box-shadow: 0px 1px 1px #464f6029;
+  box-shadow: 0px 1px 1px ${colors.grey3};
 
   &:hover {
     cursor: pointer;
@@ -54,4 +63,4 @@ const PageNext = styled.button`
   }
 `;
 
-export { Section, Flex, Text, Input, PageNext };
+export { Section, Flex, Text, Input, InputContainer, PageNext };

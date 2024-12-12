@@ -5,9 +5,9 @@ const PendingCases: FC = () => {
   return (
     <Wrapper>
       <Header title="Pending cases" />
-      <Filter />
+      <Filter state="in progress" />
       <Table />
-      <Footer />
+      <Footer state="in progress" />
     </Wrapper>
   );
 };
