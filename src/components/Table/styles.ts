@@ -24,6 +24,11 @@ const HeaderCell = styled.th`
   text-align: left;
   color: #606f89;
   background-color: ${colors.blue3};
+  cursor: pointer;
+`;
+
+const CellWrapper = styled.div`
+  text-align: center;
 `;
 
 const Row = styled.tr`
@@ -67,4 +72,14 @@ const Tag = styled.span<{ $state: string }>`
 
 const TBody = styled.tbody``;
 
-export { Table, Header, HeaderCell, Row, Cell, Actions, Tag, TBody };
+export {
+  Table,
+  Header,
+  HeaderCell,
+  CellWrapper,
+  Row,
+  Cell,
+  Actions,
+  Tag,
+  TBody,
+};

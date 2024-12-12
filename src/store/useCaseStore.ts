@@ -2,13 +2,15 @@ import { create } from "zustand";
 import { fetchCases, updateCaseStatus } from "@/api/cases";
 import { CaseStore } from "@/types";
 
-const useCaseStore = create<CaseStore>((set) => ({
+const useCaseStore = create<CaseStore>((set, get) => ({
   cases: [],
   selectedCases: [],
   selectedStatus: "",
   total: 0,
   loading: false,
   currentPage: 1,
+  sortField: null,
+  sortOrder: "asc",
   fetchCases: async (status, search, sort, order, page = 1, limit = 10) => {
     set({ loading: true });
 
@@ -41,6 +43,13 @@ const useCaseStore = create<CaseStore>((set) => ({
   },
   setStatus: (status) => set({ selectedStatus: status }),
   setCurrentPage: (page) => set({ currentPage: page }),
+  setSort: (field) => {
+    const { sortField, sortOrder } = get();
+    const newOrder =
+      sortField === field && sortOrder === "asc" ? "desc" : "asc";
+    set({ sortField: field, sortOrder: newOrder });
+    get().fetchCases(undefined, undefined, field, newOrder);
+  },
 }));
 
 export default useCaseStore;

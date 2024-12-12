@@ -16,6 +16,8 @@ type CaseStore = {
   total: number;
   loading: boolean;
   currentPage: any;
+  sortField: string | null;
+  sortOrder: string;
   fetchCases: (
     status?: string,
     search?: string,
@@ -28,6 +30,7 @@ type CaseStore = {
   toggleCaseSelection: (caseId: string) => void;
   setStatus: (status: string) => void;
   setCurrentPage: (page: number) => void;
+  setSort: (field: string) => void;
 };
 
 export type { Case, CaseStore };
