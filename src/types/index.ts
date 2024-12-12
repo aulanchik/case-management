@@ -30,7 +30,7 @@ type CaseStore = {
   toggleCaseSelection: (caseId: string) => void;
   setStatus: (status: string) => void;
   setCurrentPage: (page: number) => void;
-  setSort: (field: string) => void;
+  setSort: (field: string, status?: string) => void;
 };
 
 export type { Case, CaseStore };

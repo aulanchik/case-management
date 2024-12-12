@@ -43,12 +43,12 @@ const useCaseStore = create<CaseStore>((set, get) => ({
   },
   setStatus: (status) => set({ selectedStatus: status }),
   setCurrentPage: (page) => set({ currentPage: page }),
-  setSort: (field) => {
+  setSort: (field, status) => {
     const { sortField, sortOrder } = get();
     const newOrder =
       sortField === field && sortOrder === "asc" ? "desc" : "asc";
     set({ sortField: field, sortOrder: newOrder });
-    get().fetchCases(undefined, undefined, field, newOrder);
+    get().fetchCases(status, undefined, field, newOrder);
   },
 }));
 

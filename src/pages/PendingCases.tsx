@@ -6,7 +6,7 @@ const PendingCases: FC = () => {
     <Wrapper>
       <Header title="Pending cases" />
       <Filter state="in progress" />
-      <Table />
+      <Table state="in progress" />
       <Footer state="in progress" />
     </Wrapper>
   );

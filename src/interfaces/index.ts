@@ -18,8 +18,16 @@ interface IWrapper {
   children: React.ReactNode;
 }
 
+interface ITable {
+  state?: string;
+}
+
 interface IHeader {
   title: string;
+}
+
+interface ITHeader {
+  status?: string;
 }
 
 interface ICheckbox {
@@ -42,8 +50,10 @@ export type {
   ColorTypes,
   SizeTypes,
   DeviceTypes,
+  ITable,
   IWrapper,
   IHeader,
+  ITHeader,
   ICheckbox,
   ILoader,
   IFilter,

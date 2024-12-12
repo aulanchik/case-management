@@ -81,6 +81,7 @@ const SearchButton = styled.button`
   border-radius: 0.25rem;
   cursor: pointer;
   transition: background-color 200ms ease;
+  font-size: 0.9rem;
   &:hover {
     opacity: 0.8;
   }

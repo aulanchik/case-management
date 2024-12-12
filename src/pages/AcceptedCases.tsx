@@ -6,7 +6,7 @@ const AcceptedCases: FC = () => {
     <Wrapper>
       <Header title="Accepted cases" />
       <Filter state="accepted" />
-      <Table />
+      <Table state="accepted" />
       <Footer state="accepted" />
     </Wrapper>
   );

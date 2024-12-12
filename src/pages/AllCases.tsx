@@ -5,9 +5,9 @@ const AllCases: FC = () => {
   return (
     <Wrapper>
       <Header title="All cases" />
-      <Filter />
+      <Filter state="" />
       <Table />
-      <Footer />
+      <Footer state="" />
     </Wrapper>
   );
 };

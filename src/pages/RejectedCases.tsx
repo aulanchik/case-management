@@ -6,7 +6,7 @@ const RejectedCases: FC = () => {
     <Wrapper>
       <Header title="Rejected cases" />
       <Filter state="rejected" />
-      <Table />
+      <Table state="rejected" />
       <Footer state="rejected" />
     </Wrapper>
   );
