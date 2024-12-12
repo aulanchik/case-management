@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { IFilter } from "@/interfaces";
 import useCaseStore from "@/store/useCaseStore";
-import { Views } from "./styles";
+import { Views, Select } from "./styles";
 
 const BatchAction: FC<IFilter> = ({ state }) => {
   const { selectedCases, selectedStatus, setStatus, updateStatus, fetchCases } =
@@ -19,14 +19,18 @@ const BatchAction: FC<IFilter> = ({ state }) => {
 
   return (
     <Views>
-      <select
+      <Select
         value={selectedStatus}
         onChange={(e) => handleStatusChange(e.target.value)}
       >
-        <option value="">Batch action</option>
+        {selectedStatus === "" && (
+          <option value="" disabled hidden>
+            Batch action ▼
+          </option>
+        )}
         <option value="Accepted">Accepted</option>
         <option value="Rejected">Rejected</option>
-      </select>
+      </Select>
     </Views>
   );
 };

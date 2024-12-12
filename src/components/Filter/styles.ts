@@ -14,6 +14,36 @@ const Views = styled.div`
   gap: 0.5rem;
 `;
 
+const Select = styled.select`
+  background-color: #7d90b2;
+  border: 1px solid #5f7cb0;
+  border-radius: 0.375rem;
+  padding: 6px 12px;
+  color: ${colors.white};
+  font-weight: 500;
+  font-size: 0.9rem;
+  line-height: 1.25rem;
+  letter-spacing: 2%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  &::-ms-expand {
+    display: none;
+  }
+
+  &::after {
+    content: "\\25BE";
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: white;
+    font-size: 0.9rem;
+  }
+`;
+
 const Flex = styled.div`
   display: flex;
   align-items: center;
@@ -53,4 +83,4 @@ const SearchButton = styled.button`
   }
 `;
 
-export { Section, Views, Flex, Input, SearchButton };
+export { Section, Views, Select, Flex, Input, SearchButton };
